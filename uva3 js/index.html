@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Documento Bienvenida</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>¡Bienvenido!</h1>
+        <h2>Ingrese sus datos personales</h2>
+        <form id="formularioUsuario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+            
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="mensajeBienvenida"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!--
+1) Cree tres variables con datos personales al azar y cuando cargue la página web, muestre un mensaje de bienvenida para el usuario.  
+2) Modifique el ejercicio anterior para que el usuario sea quien ingrese sus datos.  
+3) Modifique el ejercicio anterior para mostrar un mensaje (luego del mensaje del ejercicio 1), que le diga al usuario cuántos días ha vivido desde que nació.  -->
