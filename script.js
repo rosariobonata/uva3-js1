@@ -9,26 +9,10 @@ document.querySelector('#formularioUsuario').addEventListener('submit', function
     var fechaNacimientoObj = new Date(fechaNacimiento);
     var hoy = new Date();
 
-    var diasVividos = 0;
+    // Calcular los días vividos
+    var diasVividos = Math.floor((hoy - fechaNacimientoObj) / (1000 * 60 * 60 * 24));
 
-    var añoNacimiento = fechaNacimientoObj.getFullYear();
-    var mesNacimiento = fechaNacimientoObj.getMonth();
-    var diaNacimiento = fechaNacimientoObj.getDate();
-
-    var añoHoy = hoy.getFullYear();
-    var mesHoy = hoy.getMonth();
-    var diaHoy = hoy.getDate();
-
-    diasVividos += (añoHoy - añoNacimiento) * 365;
-
-    for (var mes = 0; mes < mesHoy; mes++) {
-        diasVividos += new Date(añoHoy, mes + 1, 0).getDate();
-    }
-
-    diasVividos -= new Date(añoNacimiento, mesNacimiento + 1, 0).getDate() - diaNacimiento;
-
-    diasVividos += diaHoy;
-
+    // Generar el mensaje
     var mensajeBienvenidaHTML = '<p>¡Bienvenido, ' + nombre + ' ' + apellido + ' de ' + ciudad + '!</p>';
     var mensajeDiasVividosHTML = '<p>Has vivido aproximadamente ' + diasVividos + ' días.</p>';
 
