@@ -9,10 +9,16 @@ document.querySelector('#formularioUsuario').addEventListener('submit', function
     var fechaNacimientoObj = new Date(fechaNacimiento);
     var hoy = new Date();
 
-    // Calcular los días vividos
-    var diasVividos = Math.floor((hoy - fechaNacimientoObj) / (1000 * 60 * 60 * 24));
+    // Verificar que la fecha de nacimiento no sea futura
+    if (fechaNacimientoObj > hoy) {
+        alert("La fecha de nacimiento no puede ser en el futuro.");
+        return;
+    }
 
-    // Generar el mensaje
+ 
+    var diasVividos = (hoy - fechaNacimientoObj) / (1000 * 60 * 60 * 24);
+
+
     var mensajeBienvenidaHTML = '<p>¡Bienvenido, ' + nombre + ' ' + apellido + ' de ' + ciudad + '!</p>';
     var mensajeDiasVividosHTML = '<p>Has vivido aproximadamente ' + diasVividos + ' días.</p>';
 
